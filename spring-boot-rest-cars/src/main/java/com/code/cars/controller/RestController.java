@@ -1,10 +1,7 @@
 package com.code.cars.controller;
 
-import java.util.ArrayList;
 import java.util.Collection;
-
 import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +17,6 @@ import com.code.cars.entity.Car;
 @RequestMapping("/api")
 public class RestController {
 
-	private long start, end;
 
 	@Autowired
 	private CarsCollection theCarsCollection;
@@ -34,23 +30,12 @@ public class RestController {
 	@GetMapping("/car")
 	public Collection<Car> getCars() {
 
-		start = System.currentTimeMillis();
+
 		System.out.println("ilosc modeli: " + theCarsCollection.getQuantityCarModels());
-		end = System.currentTimeMillis();
-		System.out.println("check from size of list " + (end - start));
-
-		start = System.currentTimeMillis();
 		System.out.println("ilość wszystich aut L: " + theCarsCollection.getQuantityCars());
-		end = System.currentTimeMillis();
-		System.out.println("check from loop " + (end - start));
-
 		Collection<Car> tempCarsColl = theCarsCollection.getCars();
 
-		end = System.currentTimeMillis();
-		System.out.println("Delta of check: " + (end - start));
-
 		return tempCarsColl;
-
 	}
 
 	@PostMapping("/car")
@@ -60,7 +45,6 @@ public class RestController {
 		theCarsCollection.addCars(tempCar);
 
 		return theCar;
-
 	}
 
 }

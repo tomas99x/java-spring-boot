@@ -30,8 +30,6 @@ public class CarsArrayList implements CarsCollection {
 
 		if (theCars.contains(tempCar)) {
 
-			int index = theCars.indexOf(tempCar);
-			theCars.get(index).setQuantityCarsOfModel(theCars.get(index).getQuantityCarsOfModel() + 1);
 		} else {
 			theCars.add(tempCar);
 		}
