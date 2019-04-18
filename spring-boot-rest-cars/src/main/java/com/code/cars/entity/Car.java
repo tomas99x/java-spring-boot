@@ -39,19 +39,10 @@ public class Car {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+
 		Car other = (Car) obj;
-		if (carModel == null) {
-			if (other.carModel != null)
-				return false;
-		} else if (!carModel.equals(other.carModel))
-			return false;
-			quantityCarsOfModel++;
+		other.setQuantityCarsOfModel(other.getQuantityCarsOfModel() + 1);
+
 		return true;
 	}
 
