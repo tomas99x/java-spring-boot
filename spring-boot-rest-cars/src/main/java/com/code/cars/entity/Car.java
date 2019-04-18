@@ -41,9 +41,12 @@ public class Car {
 	public boolean equals(Object obj) {
 
 		Car other = (Car) obj;
-		other.setQuantityCarsOfModel(other.getQuantityCarsOfModel() + 1);
 
-		return true;
+		if (carModel.equals(other.carModel)) {
+			other.setQuantityCarsOfModel(other.getQuantityCarsOfModel() + 1);
+			return true;
+		}
+		return false;
 	}
 
 }

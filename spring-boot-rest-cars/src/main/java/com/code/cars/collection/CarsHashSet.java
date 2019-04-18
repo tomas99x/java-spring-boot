@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.code.cars.entity.Car;
 
-
 @Primary
 @Component
 public class CarsHashSet implements CarsCollection {
