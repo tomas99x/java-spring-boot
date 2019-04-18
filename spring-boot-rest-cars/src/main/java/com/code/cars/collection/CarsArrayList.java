@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import com.code.cars.entity.Car;
 
 
-
 @Component
 public class CarsArrayList implements CarsCollection {
 
